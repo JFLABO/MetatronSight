@@ -1,4 +1,9 @@
 # -*- coding: utf-8 -*-
+#連動テスト　8割完了のコード　カスタマイズ自由♪
+#2009年ごろのMacが壊れ始めたためUbuntuでもWindowsでも
+#動くように調整しました。最近はやりのクラウド上に構築された
+#組織内限定仮想ネットワーク用の仕様です。AzureSQL
+#///////////////////////////////////////////////////////////////
 from PyQt5 import QtWidgets, uic
 import signal
 from PyQt5.QtCore import *
