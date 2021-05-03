@@ -40,14 +40,27 @@ def cell_was_clicked( row, column):
     #item = win.tableWidget.itemAt(row, 2)
     #win.label.setText(str(item.text()))
     win.label.setText("Row %d and Column %d was clicked" % (row, column))
-    item = win.tableWidget.item(row, column)
+    item = win.tableWidget.item(row, 1)
     oid=str(item.text())
     url="http://192.168.0.15:3000/meta/"+oid
     #クラウド上に構築した組織内仮想ネットワークに接続するWebAPI
-    
+
     webbrowser.open(url)
 def setjson():
     url = 'http://192.168.0.15:3000/jsapi.json'
+    param = {
+        'Rtype': 'important',
+        'Stype': 'json'
+    }
+    # URIパラメータの文字列の作成
+    #paramStr = urllib.urlencode(param)  # type=json&user=tamago324_pad と整形される
+
+    # 読み込むオブジェクトの作成
+    #readObj = urllib.urlopen(url + paramStr)
+
+    # webAPIからのJSONを取得
+    #response = readObj.read()
+
     res = urllib.request.urlopen(url)
     # json_loads() でPythonオブジェクトに変換
     data = json.loads(res.read().decode('utf-8'))
